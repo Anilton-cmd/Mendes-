@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grandmaster Path | Chess Evolution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --gold-light: #f1d592;
+            --bg-dark: #0f1215;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --accent: #64ffda;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(100, 255, 218, 0.05) 0%, transparent 20%);
+            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .dashboard {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInDown 1s ease;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin: 0;
+            letter-spacing: 4px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .subtitle {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .card h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-light);
+            font-size: 1.5rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .card h2 span {
+            font-size: 2rem;
+            opacity: 0.5;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 0.8rem;
+            top: 2px;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+            margin-top: 20px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--gold);
+            border-radius: 3px;
+            box-shadow: 0 0 10px var(--gold);
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #555;
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard">
+    <header>
+        <h1>EVOLUTION</h1>
+        <p class="subtitle">A jornada do Caissa ao Título de Mestre</p>
+    </header>
+
+    <div class="grid">
+        <div class="card">
+            <h2><span>01</span> A Fundação</h2>
+            <ul>
+                <li><span class="highlight">Domínio Geométrico:</span> Xeque-mate de torre e dama sem hesitação.</li>
+                <li><span class="highlight">O Centro:</span> Ocupação com peões e desenvolvimento de peças leves.</li>
+                <li><span class="highlight">Padrões:</span> Resolver 20 puzzles de "Mate em 1" por dia.</li>
+            </ul>
+            <div class="progress-bar"><div class="progress-fill" style="width: 30%;"></div></div>
+        </div>
+
+        <div class="card">
+            <h2><span>02</span> A Guerra Tática</h2>
+            <ul>
+                <li><span class="highlight">Combinações:</span> Garfos, cravadas, ataques descobertos e sacrifícios.</li>
+                <li><span class="highlight">Repertório:</span> Escolher uma abertura sólida (ex: Sistema London ou Italiana).</li>
+                <li><span class="highlight">Análise:</span> Revisar partidas buscando o momento exato do erro tático.</li>
+            </ul>
+            <div class="progress-bar"><div class="progress-fill" style="width: 60%;"></div></div>
+        </div>
+
+        <div class="card">
+            <h2><span>03</span> A Maestria</h2>
+            <ul>
+                <li><span class="highlight">Finais de Peões:</span> Entender a oposição e casas críticas.</li>
+                <li><span class="highlight">Estratégia:</span> Peões isolados, colunas abertas e postos avançados.</li>
+                <li><span class="highlight">Psicologia:</span> Manter a precisão sob pressão de tempo (Blitz 3+2).</li>
+            </ul>
+            <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+        </div>
+
+        <div class="card" style="border-color: var(--accent);">
+            <h2 style="color: var(--accent);"><span>⚡</span> Ritual do Dia</h2>
+            <ul>
+                <li><span class="highlight">Morning:</span> 10 minutos de Puzzle Streak (Lichess/Chess.com).</li>
+                <li><span class="highlight">Evening:</span> 2 partidas de 10 minutos com análise profunda.</li>
+                <li><span class="highlight">Night:</span> Estudar uma partida clássica de um Campeão Mundial.</li>
+            </ul>
+            <p style="font-size: 0.8rem; color: #888; margin-top: 15px;">"A constância vence o talento quando o talento não é constante."</p>
+        </div>
+    </div>
+
+    <footer>
+        DESIGNED FOR THE MIND • 2024 • CHESS EVOLUTION SYSTEM
+    </footer>
+</div>
+
+</body>
+</html>
